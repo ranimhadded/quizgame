@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/host_room"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F97316"
+    android:orientation="vertical">
+
+    <!-- HEADER -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="@style/Widget.Material3.Toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="#F97316"
+        android:layout_marginTop="35dp"
+        android:titleTextColor="@android:color/white"
+        app:titleCentered="true"
+        app:titleTextColor="@color/white"
+        android:title="Choose a Topic"
+        app:navigationIcon="@drawable/arrow_back"
+        app:navigationIconTint="@android:color/white"
+
+        />
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <!-- ROW 1 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+
+            <!-- ROW 2 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+            <!-- ROW 3 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRow3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+            <!-- ROW 4-->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRow4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+            <!-- ROW 5 -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvRow5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

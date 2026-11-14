@@ -1,0 +1,168 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/quiz_quest"
+    android:background="#F97316"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- HEADER -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/topAppBar"
+        style="@style/Widget.Material3.Toolbar"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="#F97316"
+        android:title="Choose a Topic"
+        android:layout_marginTop="35dp"
+        app:titleCentered="true"
+        app:navigationIcon="@drawable/arrow_back"
+        app:navigationIconTint="@android:color/white"
+        app:titleTextColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+    <!-- FIRST CARD -->
+
+    <TextView
+        android:id="@+id/timer"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/circle"
+        android:gravity="center"
+        android:text="17"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/topAppBar" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_topic"
+        android:layout_width="370dp"
+        android:layout_height="265dp"
+        android:layout_margin="12dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        app:layout_constraintTop_toBottomOf="@id/timer"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="360dp"
+            android:layout_height="250dp"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="20dp">
+
+            <!-- Centered Title -->
+            <TextView
+                android:id="@+id/question_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:text="What is the largest planet in our solar system?"
+                android:textColor="#333333"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <!-- EditText with placeholder -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="280dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+                app:boxStrokeColor="@android:color/black"
+                app:hintTextColor="@android:color/black">
+
+                <EditText
+                    android:id="@+id/answer_field"
+                    android:layout_width="272dp"
+                    android:layout_height="90dp"
+                    android:hint="Tap your answer"
+                    android:padding="15dp"
+                    android:textSize="16sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- SECOND CARD -->
+
+    <View
+        android:id="@+id/divider_line"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginHorizontal="80dp"
+        android:layout_marginTop="20dp"
+        android:background="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/card_topic" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/QuestNb"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="6dp"
+        android:layout_marginBottom="40dp"
+
+        app:layout_constraintTop_toBottomOf="@id/divider_line"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:padding="20dp">
+
+            <!-- Centered Title -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Wager Points"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333333"
+                android:gravity="center"
+                android:layout_marginBottom="16dp"/>
+
+            <!-- Number buttons grid -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/score_buttons_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                app:layout_constraintTop_toBottomOf="@id/divider_line"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-30dp"
+        android:text="Submit answer"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        app:backgroundTint="#6331B5"
+        app:elevation="8dp"
+        app:layout_constraintBottom_toBottomOf="@id/QuestNb"
+        app:layout_constraintEnd_toEndOf="@id/QuestNb"
+        app:layout_constraintStart_toStartOf="@id/QuestNb" />
+</androidx.constraintlayout.widget.ConstraintLayout>

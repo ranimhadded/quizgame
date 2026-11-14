@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingVertical="10dp"
+    android:paddingHorizontal="4dp">
+
+    <!-- Profile Photo -->
+    <ImageView
+        android:id="@+id/player_avatar"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/friends"
+        android:scaleType="centerCrop"/>
+
+    <!-- Player Info -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:layout_marginStart="12dp">
+
+        <!-- Player Name -->
+        <TextView
+            android:id="@+id/player_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Player Name"
+            android:textSize="14sp"
+            android:textColor="#666666"/>
+
+        <!-- Player Answer -->
+        <TextView
+            android:id="@+id/player_answer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Answer"
+            android:textSize="16sp"
+            android:textColor="#333333"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"/>
+    </LinearLayout>
+
+    <!-- Wager Points -->
+    <TextView
+        android:id="@+id/wager_points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+5"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:layout_marginEnd="8dp"/>
+
+    <!-- Correct/Wrong Icon -->
+    <ImageView
+        android:id="@+id/result_icon"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:src="@drawable/correct"/>
+
+</LinearLayout>
