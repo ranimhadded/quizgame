@@ -65,7 +65,3 @@ QuizGame is an Android application developed in Java. It allows users to play tr
 ![Host Scores](screenshots/01-host-scores.png)
 ![Winner Screen](screenshots/02-winner.png)
 '@ | Set-Content README.md
-
-git add README.md screenshots/
-git commit -m "Add QuizGame screenshots and update README"
-git push
